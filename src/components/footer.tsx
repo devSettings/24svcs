@@ -1,5 +1,6 @@
 import Link from "next/link";
-
+import { Copyright, Mail, MapPinHouse, Phone } from "lucide-react";
+import { TextHoverEffect } from "./24svcs/animated-text";
 export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-black px-4 py-12 text-gray-400 md:px-6 lg:px-8">
@@ -8,14 +9,31 @@ export default function Footer() {
           {/* Logo and Copyright Section */}
           <div className="lg:col-span-2">
             <div className="mb-4 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white p-1">
-                <span className="font-bold text-black">24</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-600 p-1">
+                <span className="font-bold text-white">24</span>
               </div>
-              <span className="text-xl text-white">Svcs</span>
+              <span className="text-xl font-medium text-white">Svcs</span>
             </div>
-            <p className="text-sm text-gray-500">
-              © copyright 24Svcs 2024. All rights reserved.
+            <p className="flex items-center gap-1 text-sm text-zinc-500">
+              <Copyright size={14} />
+              <span>{new Date().getFullYear()}, 24svcs Inc.</span>
             </p>
+            <div className="mb-10 mt-5 flex gap-6 lg:mb-0">
+              <div className="space-y-2">
+                <p className="flex gap-1 text-xs text-muted-foreground">
+                  <Phone size={14} strokeWidth={1.5} />
+                  <span>Phone number</span>
+                </p>
+                <p className="text-xs text-white">+509 3930-9079</p>
+              </div>
+              <div className="space-y-2">
+                <p className="flex items-center gap-1 text-xs text-muted-foreground">
+                  <Mail size={14} strokeWidth={1.5} />
+                  <span>Email</span>
+                </p>
+                <p className="text-xs text-white">24svcs@gmail.com</p>
+              </div>
+            </div>
           </div>
 
           {/* Links Container */}
@@ -170,10 +188,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="inset-0 mt-10 flex items-center justify-center text-center">
+      {/* <div className="inset-0 mt-10 flex items-center justify-center text-center">
         <div className="pointer-events-none select-none text-[20vw] font-bold leading-none text-[#191919] shadow">
           24Svcs
         </div>
+      </div> */}
+      <div className="mt-5 flex h-[12rem] items-center justify-center lg:h-[30rem]">
+        {/* <TextHoverEffect text="24Svcs" /> */}
+        <TextHoverEffect text="24Svcs" />
       </div>
     </footer>
   );
