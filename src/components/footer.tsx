@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo and Copyright Section */}
           <div className="lg:col-span-2">
             <div className="mb-4 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-600 p-1">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-700 p-1">
                 <span className="font-bold text-white">24</span>
               </div>
               <span className="text-xl font-medium text-white">Svcs</span>
@@ -188,15 +188,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {/* <div className="inset-0 mt-10 flex items-center justify-center text-center">
-        <div className="pointer-events-none select-none text-[20vw] font-bold leading-none text-[#191919] shadow">
-          24Svcs
-        </div>
-      </div> */}
-      <div className="mt-5 flex h-[12rem] items-center justify-center lg:h-[30rem]">
-        {/* <TextHoverEffect text="24Svcs" /> */}
+
+      {/* <div className="mt-5 flex h-[12rem] items-center justify-center lg:h-[30rem]">
         <TextHoverEffect text="24Svcs" />
-      </div>
+      </div> */}
     </footer>
   );
 }

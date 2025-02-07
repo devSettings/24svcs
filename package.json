@@ -17,8 +17,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.2",
     "@t3-oss/env-nextjs": "^0.10.1",
+    "@tabler/icons-react": "^3.29.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.0",

@@ -4,6 +4,8 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import Footer from "~/components/footer";
 import { ThemeProvider } from "~/components/theme-provider";
+import { cn } from "~/lib/utils";
+import TrialBanner from "~/components/24svcs/trial-banner";
 
 export const metadata: Metadata = {
   title: "24svcs",
@@ -15,10 +17,19 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.className}`}>
-      <body>
+    <html
+      lang="en"
+      className={cn(
+        GeistSans.className,
+        "min-h-screen bg-background antialiased",
+      )}
+    >
+      <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
+          <div className="mb-[5rem]">
+            <TrialBanner />
+          </div>
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
