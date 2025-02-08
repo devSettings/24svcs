@@ -4,8 +4,8 @@ import { Card, CardContent } from "~/components/ui/card";
 
 export default function OpenStoreCTA() {
   return (
-    <div className="mx-5 mb-10 mt-10 lg:mx-10">
-      <Card className="w-full border bg-accent/40">
+    <div className="mx-2.5 mb-10 mt-10 lg:mx-10">
+      <Card className="w-full border-[0.1px]">
         <CardContent className="p-8 md:p-12">
           <div className="space-y-6">
             <div className="flex w-fit items-center rounded-sm border-gray-500/50 bg-accent/30 px-2 py-2 text-xs font-medium text-gray-600">

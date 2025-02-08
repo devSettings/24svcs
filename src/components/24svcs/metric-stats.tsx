@@ -31,11 +31,12 @@ const MetricsStats: React.FC = () => {
     <div className="w-full bg-black px-4 py-24 text-white">
       <div className="mx-auto max-w-6xl space-y-6 text-center">
         <h2 className="text-4xl font-bold tracking-tight text-white lg:text-5xl">
-          Ready to build your marketplace?
+          Ready to open your store?
         </h2>
         <p className="mx-auto max-w-3xl text-base text-zinc-400 lg:text-xl">
-          Transform your business with our powerful marketplace platform
-          designed to connect buyers and sellers worldwide.
+          Launch your online store on our marketplace and reach thousands of
+          potential customers. Our All in platform is designed to scale your
+          Business.
         </p>
 
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

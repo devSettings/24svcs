@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Card, CardContent } from "~/components/ui/card";
 
 import type React from "react";
+import { AspectRatio } from "../ui/aspect-ratio";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export interface Author {
   name: string;
@@ -64,32 +66,31 @@ const blogPosts: BlogPost[] = [
 
 const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
   return (
-    <Card className="group overflow-hidden border-zinc-800 bg-zinc-900">
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
-          src={post.image || "/placeholder.svg"}
-          alt={post.title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+    <Card className="group overflow-hidden bg-muted/50">
+      <div className="relative m-2 overflow-hidden rounded-md border-[0.1px] bg-accent/50">
+        <AspectRatio ratio={4 / 3} className="overflow-hidden rounded-lg">
+          <Image
+            src={post.image || "/placeholder.svg"}
+            alt={post.title}
+            fill
+            className="overflow-hidden rounded-lg object-cover p-2.5"
+          />
+        </AspectRatio>
       </div>
       <CardContent className="p-6">
-        <div className="space-y-4">
-          <span className="text-sm font-medium text-emerald-500">
+        <div className="space-y-6">
+          <span className="text-sm font-medium text-cyan-500">
             {post.category}
           </span>
-          <h3 className="text-2xl font-bold text-white transition-colors duration-200 group-hover:text-emerald-500">
-            {post.title}
-          </h3>
-          <p className="line-clamp-2 text-zinc-400">{post.description}</p>
-          <div className="flex items-center gap-3 pt-4">
-            <Image
-              src={post.author.image || "/placeholder.svg"}
-              alt={post.author.name}
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
+          <h3 className="text-lg font-bold text-white">{post.title}</h3>
+          <p className="line-clamp-3 text-sm text-muted-foreground">
+            {post.description}
+          </p>
+          <div className="mt-4 flex items-center gap-x-3">
+            <Avatar>
+              <AvatarImage src={post.author.image} />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
             <div>
               <div className="text-sm font-medium text-white">
                 {post.author.name}
@@ -105,7 +106,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 
 const BlogSection: React.FC = () => {
   return (
-    <section className="w-full bg-black px-4 py-24">
+    <section className="w-full bg-black px-2.5 py-24">
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="space-y-4 text-center">
           <h2 className="text-4xl font-bold text-white md:text-5xl">

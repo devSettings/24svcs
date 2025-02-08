@@ -1,9 +1,41 @@
 import Link from "next/link";
 import { Copyright, Mail, MapPinHouse, Phone } from "lucide-react";
 import { TextHoverEffect } from "./24svcs/animated-text";
+
+const products: { id: number; title: string }[] = [
+  { id: 1, title: "Quick Sale POS" },
+  { id: 2, title: "Izi Achat" },
+  { id: 3, title: "Previews" },
+];
+
+const company: { id: number; title: string }[] = [
+  { id: 1, title: "About" },
+  { id: 2, title: "Carrers" },
+  { id: 3, title: "Blog" },
+  { id: 4, title: "Trust" },
+  { id: 5, title: "Clients" },
+  { id: 6, title: "Changelog" },
+];
+
+const resources: { id: number; title: string }[] = [
+  { id: 1, title: "Community" },
+  { id: 2, title: "Documentation" },
+  { id: 3, title: "Guides" },
+  { id: 4, title: "Blog" },
+  { id: 5, title: "Pricing" },
+];
+
+const legal: { id: number; title: string }[] = [
+  { id: 1, title: "Fair Use" },
+  { id: 2, title: "Privacy Policy" },
+  { id: 3, title: "Terms of Service" },
+  { id: 4, title: "Trademark Policy" },
+  { id: 5, title: "Cookie Policy" },
+];
+
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden bg-black px-4 py-12 text-gray-400 md:px-6 lg:px-8">
+    <footer className="relative w-full overflow-hidden border-t bg-zinc-950 px-4 py-20 text-gray-400 shadow md:px-6 lg:px-8">
       <div className="container relative mx-auto max-w-7xl pl-3">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-6">
           {/* Logo and Copyright Section */}
@@ -37,87 +69,61 @@ export default function Footer() {
           </div>
 
           {/* Links Container */}
-          <div className="text-sm font-light lg:col-span-4 lg:pl-24">
+          <div className="text-sm lg:col-span-4 lg:pl-24">
             <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
               {/* Pages Section */}
               <div>
                 <h3 className="mb-4 text-base font-medium text-white">
-                  Quick Links
+                  Products
                 </h3>
                 <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/studio"
-                      className="transition-colors hover:text-white"
-                    >
-                      Studio
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/clients"
-                      className="transition-colors hover:text-white"
-                    >
-                      Clients
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/pricing"
-                      className="transition-colors hover:text-white"
-                    >
-                      Pricing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blog"
-                      className="transition-colors hover:text-white"
-                    >
-                      Blog
-                    </Link>
-                  </li>
+                  {products.map((product) => (
+                    <li key={product.id}>
+                      <Link
+                        href="/studio"
+                        className="transition-colors hover:text-white"
+                      >
+                        {product.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               {/* Socials Section */}
               <div>
                 <h3 className="mb-4 text-base font-medium text-white">
-                  Socials
+                  Company
                 </h3>
                 <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="#"
-                      className="transition-colors hover:text-white"
-                    >
-                      Facebook
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="transition-colors hover:text-white"
-                    >
-                      Instagram
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="transition-colors hover:text-white"
-                    >
-                      Twitter
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="transition-colors hover:text-white"
-                    >
-                      LinkedIn
-                    </Link>
-                  </li>
+                  {company.sort().map((item) => (
+                    <li key={item.id}>
+                      <Link
+                        href="#"
+                        className="transition-colors hover:text-white"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-4 text-base font-medium text-white">
+                  Resources
+                </h3>
+                <ul className="space-y-3">
+                  {resources.sort().map((resource) => (
+                    <li key={resource.id}>
+                      <Link
+                        href="/signup"
+                        className="transition-colors hover:text-white"
+                      >
+                        {resource.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -125,63 +131,16 @@ export default function Footer() {
               <div>
                 <h3 className="mb-4 text-base font-medium text-white">Legal</h3>
                 <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/privacy"
-                      className="transition-colors hover:text-white"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/terms"
-                      className="transition-colors hover:text-white"
-                    >
-                      Terms of Service
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/cookie-policy"
-                      className="transition-colors hover:text-white"
-                    >
-                      Cookie Policy
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Register Section */}
-              <div>
-                <h3 className="mb-4 text-base font-medium text-white">
-                  Register
-                </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/signup"
-                      className="transition-colors hover:text-white"
-                    >
-                      Sign Up
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/login"
-                      className="transition-colors hover:text-white"
-                    >
-                      Login
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/forgot-password"
-                      className="transition-colors hover:text-white"
-                    >
-                      Forgot Password
-                    </Link>
-                  </li>
+                  {legal.map((item) => (
+                    <li key={item.id}>
+                      <Link
+                        href="/privacy"
+                        className="transition-colors hover:text-white"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -189,9 +148,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* <div className="mt-5 flex h-[12rem] items-center justify-center lg:h-[30rem]">
+      <div className="-mb-10 mt-5 flex h-[12rem] items-center justify-center lg:mb-0 lg:mt-0 lg:h-[20rem]">
         <TextHoverEffect text="24Svcs" />
-      </div> */}
+      </div>
     </footer>
   );
 }
