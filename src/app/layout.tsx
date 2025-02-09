@@ -26,11 +26,11 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div className="mb-[5rem]">
+          {/* <div className="mb-[5rem]">
             <TrialBanner />
-          </div>
+          </div> */}
           <main>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>
