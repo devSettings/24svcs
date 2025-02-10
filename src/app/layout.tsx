@@ -6,6 +6,8 @@ import Footer from "~/components/footer";
 import { ThemeProvider } from "~/components/theme-provider";
 import { cn } from "~/lib/utils";
 import TrialBanner from "~/components/24svcs/trial-banner";
+import { Inter } from "next/font/google";
+export const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "24svcs",
@@ -19,10 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        GeistSans.className,
-        "min-h-screen bg-background antialiased",
-      )}
+      className={cn(inter.className, "min-h-screen bg-background antialiased")}
     >
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark">

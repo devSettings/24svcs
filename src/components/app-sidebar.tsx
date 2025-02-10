@@ -66,6 +66,11 @@ const data = {
           url: "#",
         },
         {
+          title: "Discount",
+          url: "#",
+          icon: IconGift,
+        },
+        {
           title: "Gift cards",
           url: "#",
         },
@@ -73,18 +78,14 @@ const data = {
     },
     {
       title: "Customers",
-      url: "/orders",
+      url: "/customers",
       icon: IconUsersGroup,
     },
+
     {
       title: "Reports",
       url: "#",
       icon: IconReport,
-    },
-    {
-      title: "Discount",
-      url: "#",
-      icon: IconGift,
     },
   ],
   navSecondary: [
@@ -121,7 +122,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-cyan-600 text-sidebar-primary-foreground">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-main text-sidebar-primary-foreground">
                   <IconTerminal2 className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">

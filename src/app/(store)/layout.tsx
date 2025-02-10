@@ -1,19 +1,10 @@
+import { IconBell, IconMail } from "@tabler/icons-react";
 import { ReactNode } from "react";
 import { AppSidebar } from "~/components/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "~/components/ui/breadcrumb";
-import { Separator } from "~/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "~/components/ui/sidebar";
+import { DateRangePicker } from "~/components/date-range-picker";
+import { ScrollArea } from "~/components/ui/scroll-area";
+import { SidebarInset, SidebarProvider } from "~/components/ui/sidebar";
+import { StoreCommad } from "./components/store-commnad";
 
 interface Props {
   children: ReactNode;
@@ -24,26 +15,19 @@ export default function Page({ children }: Props) {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+        <header className="flex h-16 w-full shrink-0 items-center gap-2">
+          <div className="flex w-full items-center justify-between gap-2 px-4">
+            <StoreCommad />
+            <div className="flex items-center gap-4 text-muted-foreground">
+              <DateRangePicker />
+            </div>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+          <ScrollArea className="h-[calc(100vh-100px)] px-1">
+            {children}
+          </ScrollArea>
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );

@@ -2,6 +2,8 @@
 
 import { TablerIcon } from "@tabler/icons-react";
 import { ChevronRight, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   Collapsible,
@@ -35,6 +37,7 @@ export function NavMain({
     }[];
   }[];
 }) {
+  const currentPath = usePathname();
   return (
     <SidebarGroup>
       <SidebarGroupLabel>My Store</SidebarGroupLabel>
@@ -45,19 +48,37 @@ export function NavMain({
               <SidebarMenuButton
                 asChild
                 tooltip={item.title}
-                className={cn("h-10 rounded-sm", {
-                  "font-medium text-cyan-300": item.isActive,
-                })}
+                className={cn(
+                  "h-10 text-muted-foreground transition-all duration-75 ease-linear hover:border-[0.1px] hover:bg-card",
+                  {
+                    "border-[0.1px] font-medium text-white hover:bg-card":
+                      currentPath === item.url,
+                  },
+                )}
               >
-                <a href={item.url}>
-                  <item.icon className="text-xl" size={50} />
-                  <span>{item.title}</span>
-                </a>
+                <Link href={item.url} className="">
+                  <item.icon
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      minWidth: "20px",
+                      minHeight: "20px",
+                      color: item.isActive ? "" : "inherit",
+                    }}
+                    stroke={1.5}
+                    className={cn()}
+                  />
+                  <span className="text-whit">{item.title}</span>{" "}
+                </Link>
               </SidebarMenuButton>
               {item.items?.length ? (
                 <>
-                  <CollapsibleTrigger asChild>
-                    <SidebarMenuAction className="data-[state=open]:rotate-90">
+                  <CollapsibleTrigger asChild className="mt-1">
+                    <SidebarMenuAction
+                      className={cn("data-[state=open]:rotate-90", {
+                        "": "data-[state=open]",
+                      })}
+                    >
                       <ChevronRight />
                       <span className="sr-only">Toggle</span>
                     </SidebarMenuAction>
@@ -71,9 +92,9 @@ export function NavMain({
                             size="md"
                             className="h-10 rounded-sm text-muted-foreground"
                           >
-                            <a href={subItem.url}>
+                            <Link href={subItem.url}>
                               <span>{subItem.title}</span>
-                            </a>
+                            </Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}
@@ -87,4 +108,21 @@ export function NavMain({
       </SidebarMenu>
     </SidebarGroup>
   );
+}
+{
+  /* <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-command"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M7 9a2 2 0 1 1 2 -2v10a2 2 0 1 1 -2 -2h10a2 2 0 1 1 -2 2v-10a2 2 0 1 1 2 2h-10" />
+</svg>; */
 }
