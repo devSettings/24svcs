@@ -4,6 +4,7 @@ import { cn } from "~/lib/utils";
 import { Globe, Smartphone, StoreIcon } from "lucide-react";
 // import { FaStoreAlt } from "react-icons/fa";
 import { Source } from "~/types/orders";
+import { IconDevices } from "@tabler/icons-react";
 
 interface OrderSourceBadgeProps {
   source: Source;
@@ -22,7 +23,7 @@ const sourceConfig: Record<
 
   POS: {
     label: "POS",
-    icon: StoreIcon,
+    icon: IconDevices,
     className:
       "bg-slate-500/20 text-slate-400 border-slate-500/50 hover:bg-slate-500/30 hover:border-slate-400",
   },

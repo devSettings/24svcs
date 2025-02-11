@@ -1,8 +1,9 @@
+import { TablerIcon } from "@tabler/icons-react";
 import { LucideIcon } from "lucide-react";
 
 export interface Metric {
   title: string;
   count: number;
-  icon: LucideIcon;
+  icon: TablerIcon;
   iconStyle: string;
 }

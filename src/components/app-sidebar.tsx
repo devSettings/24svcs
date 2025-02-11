@@ -38,13 +38,8 @@ const data = {
   },
   navMain: [
     {
-      title: "Overview",
-      url: "/overview",
-      icon: IconLayoutBoard,
-    },
-    {
       title: "Orders",
-      url: "/orders",
+      url: "/dashboard/orders",
       icon: IconShoppingBag,
       isActive: true,
     },
@@ -83,7 +78,7 @@ const data = {
     },
 
     {
-      title: "Reports",
+      title: "Accounting",
       url: "#",
       icon: IconReport,
     },

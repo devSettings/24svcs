@@ -16,3 +16,11 @@ export type RecentOrders = {
   status: Status;
   source: Source;
 };
+
+export type LatestOrders = {
+  id: string;
+  name: string;
+  image_url: string;
+  email: string;
+  amount: string;
+};

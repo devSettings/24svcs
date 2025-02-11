@@ -49,9 +49,9 @@ export function NavMain({
                 asChild
                 tooltip={item.title}
                 className={cn(
-                  "h-10 text-muted-foreground transition-all duration-75 ease-linear hover:border-[0.1px] hover:bg-card",
+                  "h-10 border-none text-muted-foreground transition-all duration-75 ease-linear hover:border-[0.1px] hover:bg-zinc-800/50",
                   {
-                    "border-[0.1px] font-medium text-white hover:bg-card":
+                    "bg-zinc-800/50 font-medium text-white":
                       currentPath === item.url,
                   },
                 )}
